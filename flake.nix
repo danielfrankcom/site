@@ -17,6 +17,7 @@
                     devShell = pkgs.mkShell {
                         buildInputs = [
                             pkgs.nodejs
+                            pkgs.awscli2
                             nodePkgs.aws-cdk
                         ];
                     };
