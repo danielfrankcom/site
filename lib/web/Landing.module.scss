@@ -1,0 +1,62 @@
+.landing {
+  display: flex;
+}
+
+@media screen and (max-width: $breakpoint-xs) {
+  .landing {
+    flex-direction: column;
+  }
+}
+
+.questionContainer {
+  flex: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.questionText {
+  @include large-font();
+  font-weight: 600;
+  text-align: center;
+}
+
+@media screen and (min-width: $breakpoint-xs) {
+  .questionContainer {
+    height: 100vh;
+    width: 50vw;
+  }
+  .questionText {
+    position: fixed;
+    width: 40vw;
+  }
+}
+
+@media screen and (max-width: $breakpoint-xs) {
+  .questionText {
+    width: 80vw;
+  }
+}
+
+.people {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.person {
+  margin: 10px 10px 10px 10px;
+}
+
+@media screen and (min-width: $breakpoint-xs) {
+  .people {
+    margin-right: 40px;
+  }
+  .person {
+    margin: 20px 10px 20px 10px;
+    max-width: 800px;
+  }
+}

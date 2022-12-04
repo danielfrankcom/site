@@ -1,25 +1,16 @@
 import React from "react";
-import Person from "./Person";
+import { NextUIProvider } from "@nextui-org/react";
 
-import danielUrl from "./img/daniel.jpg";
-import dianeUrl from "./img/diane.jpg";
-import paulUrl from "./img/paul.jpg";
+import Landing from "./Landing";
 
-const people = {
-  Daniel: danielUrl,
-  Diane: dianeUrl,
-  Paul: paulUrl,
-};
-
-export default function App() {
-  return (
-    <div>
-      <h1>Who are you looking for?</h1>
-      <div id="people">
-        {Object.keys(people).map((name) => (
-          <Person name={name} img_url={people[name]} />
-        ))}
-      </div>
-    </div>
-  );
+class App extends React.Component {
+  render() {
+    return (
+      <NextUIProvider>
+        <Landing />
+      </NextUIProvider>
+    );
+  }
 }
+
+export default App;

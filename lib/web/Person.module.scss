@@ -1,0 +1,21 @@
+.cardBody {
+  display: flex;
+}
+
+.image {
+  border-radius: 15px;
+  flex: 1;
+}
+
+.name {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.nameText {
+  @include medium-font();
+  text-align: center;
+  font-weight: 500;
+}
