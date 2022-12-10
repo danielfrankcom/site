@@ -1,5 +1,8 @@
 .container {
-  max-width: 100%;
+  /* Override the theme configuration for this container. The theme
+   * defines the property inline, so we must use !important to override
+   * the property when this value is pulled from a CSS file. */
+  max-width: 100% !important;
 }
 
 .cardBody {
