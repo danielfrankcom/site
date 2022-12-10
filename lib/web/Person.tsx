@@ -12,7 +12,7 @@ type PersonProps = {
 };
 
 const Person = ({ img, name, link }: PersonProps) => (
-  <Link href={link}>
+  <Link href={link} className={styles.container}>
     <Card isHoverable isPressable>
       <Card.Body>
         <div className={styles.cardBody}>

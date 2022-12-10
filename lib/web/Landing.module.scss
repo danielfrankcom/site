@@ -1,16 +1,15 @@
 .landing {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
 
 @media screen and (max-width: $breakpoint-xs) {
   .landing {
-    flex-direction: column;
+    grid-template-columns: 1fr;
   }
 }
 
 .questionContainer {
-  flex: 1;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -40,8 +39,6 @@
 }
 
 .people {
-  flex: 1;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -52,11 +49,8 @@
 }
 
 @media screen and (min-width: $breakpoint-xs) {
-  .people {
-    margin-right: 40px;
-  }
   .person {
-    margin: 20px 10px 20px 10px;
+    margin: 20px 40px 20px 10px;
     max-width: 800px;
   }
 }
