@@ -1,10 +1,11 @@
 .landing {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-}
 
-@media screen and (max-width: $breakpoint-xs) {
-  .landing {
+  // On large screens, the layout will be horizontal side-by-side cards.
+  grid-template-columns: repeat(2, 1fr);
+
+  @include smaller-than(small) {
+    // On small screens, the layout will be vertical stacked cards.
     grid-template-columns: 1fr;
   }
 }
@@ -13,28 +14,32 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  // Horizontal view should show the question on the left, taking up all vertical space.
+  height: 100vh;
+
+  @include smaller-than(small) {
+    // Vertical view should show question at the top without unnecessary padding.
+    height: auto;
+  }
 }
 
 .questionText {
-  @include large-font();
   font-weight: 600;
   text-align: center;
-}
 
-@media screen and (min-width: $breakpoint-xs) {
-  .questionContainer {
-    height: 100vh;
-    width: 50vw;
-  }
-  .questionText {
-    position: fixed;
-    width: 40vw;
-  }
-}
+  // Horizontal view fixes the question in place so the cards can be scrolled.
+  position: fixed;
 
-@media screen and (max-width: $breakpoint-xs) {
-  .questionText {
+  width: 30vw;
+  font-size: min(6vw, 110px);
+
+  @include smaller-than(small) {
+    // Vertical view allows the question to disappear as the user scrolls.
+    position: unset;
+
     width: 80vw;
+    font-size: 10vw;
   }
 }
 
@@ -45,12 +50,10 @@
 }
 
 .person {
-  margin: 10px 10px 10px 10px;
-}
+  margin: 20px 40px 20px 10px;
+  max-width: 800px;
 
-@media screen and (min-width: $breakpoint-xs) {
-  .person {
-    margin: 20px 40px 20px 10px;
-    max-width: 800px;
+  @include smaller-than(small) {
+    margin: 10px 10px 10px 10px;
   }
 }
