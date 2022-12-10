@@ -23,7 +23,11 @@
 }
 
 .nameText {
-  @include medium-font();
   text-align: center;
   font-weight: 500;
+  font-size: min(3.5vw, 60px);
+
+  @include smaller-than(small) {
+    font-size: 7vw;
+  }
 }
